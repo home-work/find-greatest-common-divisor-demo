@@ -12,5 +12,23 @@ public class FindGreatestCommonDivisorDemo {
         //Tính giá trị tuyệt đối
         a = Math.abs(a);
         b = Math.abs(b);
+
+        //Tìm ước chung lớn nhất
+        if (a == 0 && b == 0) {
+            System.out.println("Không có UCLN");
+        } else if (a == 0 && b != 0) {
+            System.out.println("UCLN là: " + b);
+        } else if (a != 0 && b == 0) {
+            System.out.println("UCLN là: " + a);
+        } else {
+            while (a != b) {
+                if (a < b) {
+                    b = b - a;
+                } else {
+                    a = a - b;
+                }
+            }
+            System.out.println("UCLN là : " + a);
+        }
     }
 }
